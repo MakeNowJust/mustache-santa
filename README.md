@@ -1,8 +1,6 @@
-# Mustache::Santa
+# `Mustache::Santa`
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mustache/santa`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+> `Mustache::Santa` provides Mustache syntax extensions to support parameters.
 
 ## Installation
 
@@ -22,7 +20,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'mustache'
+require 'mustache/santa'
+
+class Params
+  # Include this to support parameter calls.
+  include Mustache::Santa::ParamaterSupport
+
+  def hello(name:)
+    "Hello #{name}!"
+  end
+end
+
+Mustache.render('{{hello(name=Mustache)}}', Params.new)
+# => "Hello Mustache!"
+```
 
 ## Development
 
