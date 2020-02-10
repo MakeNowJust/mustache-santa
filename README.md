@@ -1,4 +1,4 @@
-# `Mustache::Santa`
+# Mustache::Santa
 
 > `Mustache::Santa` provides Mustache syntax extensions to support parameters.
 
